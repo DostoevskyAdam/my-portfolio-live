@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@botpoison/browser": "^0.1.30",
     "@carbon/icons-react": "^10.6.1",
     "@carbon/themes": "^10.7.0",
     "@testing-library/jest-dom": "^5.11.4",
@@ -13,10 +12,7 @@
     "axios": "^0.23.0",
     "carbon-components": "^10.7.3",
     "carbon-components-react": "^7.7.3",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
     "history": "^5.0.1",
-    "node-mailer": "^0.1.1",
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
