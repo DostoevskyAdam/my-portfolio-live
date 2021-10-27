@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/DostoevskyAdam/my-portfolio-live/static/css/main.ea58596f.chunk.css",
-    "main.js": "/DostoevskyAdam/my-portfolio-live/static/js/main.ea4f4157.chunk.js",
-    "main.js.map": "/DostoevskyAdam/my-portfolio-live/static/js/main.ea4f4157.chunk.js.map",
+    "main.js": "/DostoevskyAdam/my-portfolio-live/static/js/main.3c5b5e09.chunk.js",
+    "main.js.map": "/DostoevskyAdam/my-portfolio-live/static/js/main.3c5b5e09.chunk.js.map",
     "runtime-main.js": "/DostoevskyAdam/my-portfolio-live/static/js/runtime-main.730a83d1.js",
     "runtime-main.js.map": "/DostoevskyAdam/my-portfolio-live/static/js/runtime-main.730a83d1.js.map",
-    "static/js/2.507db340.chunk.js": "/DostoevskyAdam/my-portfolio-live/static/js/2.507db340.chunk.js",
-    "static/js/2.507db340.chunk.js.map": "/DostoevskyAdam/my-portfolio-live/static/js/2.507db340.chunk.js.map",
+    "static/js/2.73c0a91f.chunk.js": "/DostoevskyAdam/my-portfolio-live/static/js/2.73c0a91f.chunk.js",
+    "static/js/2.73c0a91f.chunk.js.map": "/DostoevskyAdam/my-portfolio-live/static/js/2.73c0a91f.chunk.js.map",
     "index.html": "/DostoevskyAdam/my-portfolio-live/index.html",
-    "precache-manifest.dd3ed032086bb8dd5259679ebc5d1396.js": "/DostoevskyAdam/my-portfolio-live/precache-manifest.dd3ed032086bb8dd5259679ebc5d1396.js",
+    "precache-manifest.328c134134a245db6d4523966eb86cb9.js": "/DostoevskyAdam/my-portfolio-live/precache-manifest.328c134134a245db6d4523966eb86cb9.js",
     "service-worker.js": "/DostoevskyAdam/my-portfolio-live/service-worker.js",
     "static/css/main.ea58596f.chunk.css.map": "/DostoevskyAdam/my-portfolio-live/static/css/main.ea58596f.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.730a83d1.js",
-    "static/js/2.507db340.chunk.js",
+    "static/js/2.73c0a91f.chunk.js",
     "static/css/main.ea58596f.chunk.css",
-    "static/js/main.ea4f4157.chunk.js"
+    "static/js/main.3c5b5e09.chunk.js"
   ]
 }
