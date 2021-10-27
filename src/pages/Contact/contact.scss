@@ -1,0 +1,23 @@
+form {
+    width: 100%;
+    font-size: medium;
+    text-align: center;
+}
+label {
+    display: inline-block;
+    width: 170px;
+    text-align: left;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #364348;
+    color: #fff;
+
+    &:hover {
+      background-color: rgba(54, 67, 72, 0.8);
+    }
+  }

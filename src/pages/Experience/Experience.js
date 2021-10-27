@@ -1,17 +1,17 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import { SectionTitle, Paragraph } from '../../styles';
-import { WorkItem, WorkTitle, JobTitle } from './styles';
+import { ExperienceItem, ExperienceTitle, JobTitle } from './styles';
 
-const Work = ({ gitData }) => {
+const Experience = ({ gitData }) => {
   return (
     <Layout gitData={gitData}>
       <div>
-        <SectionTitle>Work</SectionTitle>
+        <SectionTitle>Experience</SectionTitle>
         <ul>
           {gitData.work.map((work, i) => (
-            <WorkItem key={i}>
-              <WorkTitle>{work.position}</WorkTitle>
+            <ExperienceItem key={i}>
+              <ExperienceTitle>{work.position}</ExperienceTitle>
               <div>
                 <JobTitle>{work.company}</JobTitle> <span>{work.location}</span>
                 <span> &sdot; </span>
@@ -20,7 +20,7 @@ const Work = ({ gitData }) => {
                 </span>
               </div>
               <Paragraph>{work.summary}</Paragraph>
-            </WorkItem>
+            </ExperienceItem>
           ))}
         </ul>
       </div>
@@ -28,4 +28,4 @@ const Work = ({ gitData }) => {
   );
 };
 
-export default Work;
+export default Experience;

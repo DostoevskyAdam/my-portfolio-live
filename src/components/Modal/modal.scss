@@ -1,0 +1,62 @@
+.modalContainer {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($color: #000000, $alpha: 0.50);
+    z-index: 9000;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .modal {
+      width: 80%;
+      height: auto;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+  
+      background-color: rgba(200, 22, 100, 0.35);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.445);
+  
+      &_header {
+        position: relative;
+        border-bottom: 1px solid #dddddd;
+        &-title {
+          text-align: center;
+        }
+  
+        .close {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background: rgba(54, 67, 72, 0.8);;
+  
+          img {
+            width: 1rem;
+            height: auto;
+            transition: all 0.3s;
+          }
+          &:hover {
+            img {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+  
+      &_content {
+        border-bottom: 1px solid #dddddd;
+        padding: 2rem 0;
+      }
+  
+      &_footer {
+        padding: 2rem 0;
+        padding-bottom: 0;
+    }
+  }
+}

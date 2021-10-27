@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@botpoison/browser": "^0.1.30",
     "@carbon/icons-react": "^10.6.1",
     "@carbon/themes": "^10.7.0",
     "@testing-library/jest-dom": "^5.11.4",

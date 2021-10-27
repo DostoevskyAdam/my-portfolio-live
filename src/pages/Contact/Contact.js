@@ -1,34 +1,60 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import axios from "axios";
+import "./contact.scss";
 
 function Contact() {
-  const formId = process.env.API_SECRET;
-  const formSparkUrl = "https://submit-form.com/";
-  const support = "yourfriends@atompi.ca";
-  //function here so we can reset recaptcha form when it has been submitted
-  const recapthchaRef = useRef();
-
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState([]);
-
+  
   const submitForm = async (e) => {
-    //prevent the page from reloading when form is clicked
+    //prevent the page from reloading
     e.preventDefault();
-    setSubmitting(true);
-    // wait for the data to go through to FormSpark
-    await postSubmission();
-    setSubmitting(false);
-    //reset form when alert is closed
-    setName("");
-    setEmail("");
-    setMessage("");
+    const pattern =
+      /[a-zA-Z0-9]+[.]?([a-zA-Z0-9]+)?[@][a-z]{3,9}[.][a-z]{2,5}/g;
+    const patternResult = pattern.test(email);
+
+    if (name.trim() === "" || stringContainsNumber(name) || name.length > 40) {
+      alert("please enter a valid name");
+    } else if (patternResult === false || email.length > 40) {
+      alert("please enter a valid email");
+    } else if (message === "") {
+      alert("don't forget your message!");
+    } else if (message.length > 200) {
+      alert("please limit your message to 200 characters or less");
+    } else {
+      setSubmitting(true);
+      // wait for the data to go through to FormSpark
+      await postSubmission();
+      document.getElementById("contactFormId").style.display = "none";
+      setSubmitting(false);
+      //reset form when alert is closed
+      setName("");
+      setEmail("");
+      setMessage("");
+    }
   };
 
+  function stringContainsNumber(myString) {
+    let containsAnyNumbers = String(myString);
+    for (let i = 0; i < containsAnyNumbers.length; i++) {
+      if (
+        !isNaN(containsAnyNumbers.charAt(i)) &&
+        !(containsAnyNumbers.charAt(i) === " ")
+      ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   const postSubmission = async () => {
+    const support = "yourfriends@atompi.ca";
+    const formId = `${process.env.REACT_APP_API_SPARK}`;
+    const formSparkUrl = "https://submit-form.com/";
     const uri = `${formSparkUrl}${formId}`;
     const payload = {
       name: { name },
@@ -50,41 +76,45 @@ function Contact() {
     }
   };
   return (
-    <div>
+    <>
       <div>
-        <h1>Contact</h1>
+        <h3>{success.text}</h3>
       </div>
-      <div>{success.text}</div>
-      <form onSubmit={submitForm}>
-        <label htmlFor="name">
-          Name:
-          <input
-            autoFocus
-            value={name}
-            type="text"
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
-        <label htmlFor="email">
-          Email:
-          <input
-            value={email}
-            type="text"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <label htmlFor="message">
-          {" "}
-          Message:
-          <input
-            value={message}
-            type="text"
-            onChange={(e) => setMessage(e.target.value)}
-          />
-        </label>
+      <form onSubmit={submitForm} id="contactFormId">
+        <div>
+          <label htmlFor="name">
+            Name:
+            <input
+              autoFocus
+              value={name}
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="email">
+            Email:
+            <input
+              value={email}
+              type="text"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="message">
+            Message:
+            <textarea
+              value={message}
+              rows="4"
+              onChange={(e) => setMessage(e.target.value)}
+            />
+          </label>
+        </div>
         <button>Submit</button>
       </form>
-    </div>
+    </>
   );
 }
 

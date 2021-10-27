@@ -21,10 +21,10 @@ export const Header = styled.div`
 export const Image = styled.img`
   width: 200px;
   margin-right: 1rem;
-  border-radius: 2px;
+  border-radius: 8px;
 `;
 
-export const ViewResumeLink = styled.a`
+export const ViewLink = styled.a`
   display: flex;
   text-decoration: none;
   padding: 0.75rem 1.5rem;
@@ -50,4 +50,15 @@ export const ProfileLink = styled.li`
   margin-bottom: 0.5rem;
   display: inline-block;
   font-size: 18px;
+`;
+export const Skills = styled.div`
+    margin: 10px;
+    display: ${({ isHome }) => (!isHome ? 'none' : 'flex')};
+`;
+
+export const SkillTitle = styled.h3`
+  margin: 10px;
+@media (max-width: 640px) {
+  display: none;
+}
 `;
